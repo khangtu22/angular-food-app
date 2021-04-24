@@ -1,0 +1,12 @@
+.dropdown-item:hover{
+  background-color: rgba(85, 87, 87, 0.1) !important;
+  border-radius: .125rem;
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.1), 0 4px 15px 0 rgba(0, 0, 0, 0.1);
+  transition: all .1s linear;
+}
+.btn {border-radius: 8px;}
+.navbar{
+  background-color: #7952b3;
+  color: #000;
+  font-family: 'Poppins',sans-serif;
+}
