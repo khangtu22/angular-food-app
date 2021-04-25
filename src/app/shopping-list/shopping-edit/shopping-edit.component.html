@@ -1,19 +1,19 @@
 <div class="row">
   <div class="col-md-12">
-    <form action="">
+    <form>
       <div class="row">
         <div class="col-sm-5 form-group">
           <label for="name">Name</label>
-          <input type="text" id="name" class="form-control">
+          <input type="text" id="name" class="form-control" #nameInput>
         </div>
         <div class="col-sm-2 form-group">
           <label for="amount">Amount</label>
-          <input type="number" class="form-control" id="amount">
+          <input type="number" class="form-control" id="amount" #amountInput>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
-          <button class="btn btn-success" type="submit">Add</button>
+          <button class="btn btn-success" type="button" (click)="onAddShoppingList()">Add</button>
           <button class="btn btn-danger" type="button">Delete</button>
           <button class="btn btn-primary" type="button">Clear</button>
         </div>
