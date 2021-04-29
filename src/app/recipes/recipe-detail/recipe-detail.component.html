@@ -15,12 +15,13 @@
   <div class="col-md-12">
     <div class="dropdown">
       <!--Trigger-->
-      <a class="dropdown-toggle text-white" type="button" data-toggle="dropdown"
+      <a style="cursor: pointer" class="dropdown-toggle text-white" type="button" data-toggle="dropdown"
          aria-haspopup="true" aria-expanded="false"><button type="button" class="btn btn-primary dropdown-toggle">Manage Recipe<span class="caret"></span></button></a>
       <!--Menu-->
       <div class="dropdown-menu dropdown-menu-right pl-2 pr-2 z-depth-1">
         <a class="dropdown-item" (click)="onAddShoppingList()" style="cursor: pointer;">Add</a>
-        <a class="dropdown-item" href="#">Delete</a>
+        <a class="dropdown-item" (click)="onEditRecipe()" style="cursor: pointer;">Edit</a>
+        <a class="dropdown-item" style="cursor: pointer">Delete</a>
       </div>
     </div>
   </div>

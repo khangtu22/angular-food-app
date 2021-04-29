@@ -10,3 +10,7 @@
   color: #000;
   font-family: 'Poppins',sans-serif;
 }
+
+.active{
+  background-color: #4900ba;
+}
