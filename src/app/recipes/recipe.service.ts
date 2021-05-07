@@ -9,39 +9,44 @@ export class RecipeService {
   recipesChanged = new Subject<Recipe[]>();
 
   private recipes: Recipe[] = [
-    new Recipe(
-      'Recipe 1',
-      'Pacing chocolate cake',
-      'https://cdn.pixabay.com/photo/2017/12/01/16/14/cookies-2991174_1280.jpg',
-      [new Ingredient('Oliver', 9),
-        new Ingredient('Bread', 12),
-        new Ingredient('Onion', 122),
-        new Ingredient('Tomato', 11)
-      ]
-    ),
-    new Recipe(
-      'Recipe 2',
-      'Pacing chocolate cake',
-      'https://cdn.pixabay.com/photo/2017/12/01/16/14/cookies-2991174_1280.jpg',
-      [new Ingredient('Oliver', 2),
-        new Ingredient('Bread', 12),
-        new Ingredient('Onion', 11),
-        new Ingredient('Tomato', 1)
-      ]
-      ),
-    new Recipe(
-      'Recipe 3',
-      'Pacing chocolate cake',
-      'https://cdn.pixabay.com/photo/2017/12/01/16/14/cookies-2991174_1280.jpg',
-      [new Ingredient('Oliver', 2),
-        new Ingredient('Bread', 12),
-        new Ingredient('Onion', 11),
-        new Ingredient('Tomato', 1)
-      ]
-    )
+    // new Recipe(
+    //   'Recipe 1',
+    //   'Pacing chocolate cake',
+    //   'https://cdn.pixabay.com/photo/2017/12/01/16/14/cookies-2991174_1280.jpg',
+    //   [new Ingredient('Oliver', 9),
+    //     new Ingredient('Bread', 12),
+    //     new Ingredient('Onion', 122),
+    //     new Ingredient('Tomato', 11)
+    //   ]
+    // ),
+    // new Recipe(
+    //   'Recipe 2',
+    //   'Pacing chocolate cake',
+    //   'https://cdn.pixabay.com/photo/2017/12/01/16/14/cookies-2991174_1280.jpg',
+    //   [new Ingredient('Oliver', 2),
+    //     new Ingredient('Bread', 12),
+    //     new Ingredient('Onion', 11),
+    //     new Ingredient('Tomato', 1)
+    //   ]
+    //   ),
+    // new Recipe(
+    //   'Recipe 3',
+    //   'Pacing chocolate cake',
+    //   'https://cdn.pixabay.com/photo/2017/12/01/16/14/cookies-2991174_1280.jpg',
+    //   [new Ingredient('Oliver', 2),
+    //     new Ingredient('Bread', 12),
+    //     new Ingredient('Onion', 11),
+    //     new Ingredient('Tomato', 1)
+    //   ]
+    // )
   ];
 
   constructor(private shoppingListService: ShoppingListService) {
+  }
+
+  setRecipes(recipes: Recipe[]): void {
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice());
   }
 
   getRecipes(): Array<Recipe>{

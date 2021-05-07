@@ -10,25 +10,21 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item mr-4">
-        <a href="#" data-toggle="tooltip" title="View History"><i class="fa fa-history" style="color:white"></i></a>
+      <li *ngIf="isAuthenticated" class="mr-4 text-white">
+        <a style="cursor: pointer" role="button" (click)="onLogout()">Logout</a>
       </li>
-
-      <li class="nav-item mr-4">
-        <a href="#" data-toggle="tooltip" title="Go to project repository"><i class="fa fa-github" style="color:white"></i></a>
-      </li>
-
-      <li class="nav-item" style="color: white">
+      <li class="nav-item" style="color: white" *ngIf="isAuthenticated">
         <div class="dropdown">
           <!--Trigger-->
           <a class="dropdown-toggle text-white" type="button" data-toggle="dropdown"
              aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" style="color:white"></i></a>
           <!--Menu-->
           <div class="dropdown-menu dropdown-menu-right pl-2 pr-2 z-depth-1">
-            <a style="cursor: pointer" class="dropdown-item" >Save Data</a>
-            <a style="cursor: pointer" class="dropdown-item">Fetch Data</a>
+            <a style="cursor: pointer" class="dropdown-item" (click)="onSaveData()">Save Data</a>
+            <a style="cursor: pointer" class="dropdown-item" (click)="onFetchData()">Fetch Data</a>
           </div>
         </div>
       </li>
