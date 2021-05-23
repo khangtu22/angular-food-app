@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {catchError, tap} from 'rxjs/operators';
-import {BehaviorSubject, Subject, throwError} from 'rxjs';
+import {BehaviorSubject, throwError} from 'rxjs';
 import {UserModel} from './user.model';
 import {Router} from '@angular/router';
 
@@ -43,7 +43,7 @@ export class AuthService {
             resData.localId,
             resData.idToken,
             +resData.expiresIn);
-      }));
+        }));
   }
 
   login(email: string, password: string): any {
@@ -53,14 +53,14 @@ export class AuthService {
       returnSecureToken: true
     })
       .pipe(catchError(this.handleError),
-      tap((resData: LoginResponseData) => {
-        this.handleAuthentication(
-          resData.email,
-          resData.localId,
-          resData.idToken,
-          +resData.expiresIn
-        );
-      }));
+        tap((resData: LoginResponseData) => {
+          this.handleAuthentication(
+            resData.email,
+            resData.localId,
+            resData.idToken,
+            +resData.expiresIn
+          );
+        }));
   }
 
   autoLogin(): any {
@@ -91,6 +91,7 @@ export class AuthService {
       this.autoLogout(expirationDuration);
     }
   }
+
   logout(): void {
     this.user.next(null);
     this.router.navigate(['/auth']);
